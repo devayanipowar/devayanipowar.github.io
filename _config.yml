@@ -108,7 +108,7 @@ analytics:
 # Site Author
 author:
   name             : "Devayani Pawar"
-  avatar           : "C:/Users/dpawa/OneDrive/Desktop/devayanipowar.github.io/images/bio.jpg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "C:/Users/dpawa/OneDrive/Desktop/devayanipowar.github.io/images/bio.jpeg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Just a happy learner"
   location         : "Washington DC"
   email            : "dpawar@gmu.edu"
