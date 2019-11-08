@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "My Folio"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Devayani Pawar"
@@ -108,8 +108,8 @@ analytics:
 # Site Author
 author:
   name             : "Devayani Pawar"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Folio"
+  avatar           : "/images/bio.jpg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Just a happy learner"
   location         : "Washington DC"
   email            : "dpawar@gmu.edu"
   links:
