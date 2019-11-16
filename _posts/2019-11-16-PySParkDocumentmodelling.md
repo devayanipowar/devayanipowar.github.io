@@ -2,10 +2,11 @@
 title: "PySpark: Document Modelling Basics"
 date: 2019-11-16
 tags: [NLP, data science, spark]
-header:
-  image:
-excerpt: "NLP, PySPark, Text Modelling"
 ---
+
+# PySpark DataFrames
+
+PySpark DataFrames is an implementation of the pairs method in Spark, using frames.
 
 ```python
 import findspark
@@ -21,15 +22,6 @@ spark = SparkSession(sc)
 ```
 
 
-```python
-
-```
-
-
-```python
-
-```
-
 
 ```python
 from itertools import combinations
@@ -38,7 +30,7 @@ from pyspark.sql import Row
 from pyspark.ml.feature import StopWordsRemover
 import numpy as np
 ```
-
+I loaded the lines from the text file as rdd and then converted it into **DataFrame**
 
 ```python
 def fun(lines):
@@ -46,11 +38,6 @@ def fun(lines):
     return lines
 
 lines = sc.textFile("C:\\Users\\dpawa\\OneDrive\\Documents\\stateoftheunion1790-2019.txt").map(fun)
-
-```
-
-
-```python
 
 ```
 
@@ -219,19 +206,4 @@ from pyspark.sql.functions import col
 
 sort_df = inner_join.filter("`P(A/B)` > 0.8")
 sort_df.toPandas().to_csv("C:\\Users\\dpawa\\OneDrive\\Documents\\657\\assign_1_657_Pawar\\output\\probabilityandcoocc.csv")
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
 ```
