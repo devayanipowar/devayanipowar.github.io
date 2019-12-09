@@ -1,7 +1,7 @@
 ---
 title: "PySpark: Document Modelling "
 date: 2019-11-16
-tags: [NLP, data science, spark]
+tags: [NLP, data science, PySpark]
 ---
 
 # PySpark DataFrames
