@@ -12,11 +12,11 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "My Folio"
+title                    : "Devayani Pawar"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Devayani Pawar"
@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "Devayani Pawar"
   avatar           : "/images/bio.jpeg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Just a happy learner"
+  bio              : "Student | Data Scientist | Explorer"
   location         : "Washington DC"
   email            : "dpawar@gmu.edu"
   links:
@@ -127,7 +127,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://devayanipowar.github.io/"
+      url: "https://github.com/devayanipowar?tab=repositories"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
