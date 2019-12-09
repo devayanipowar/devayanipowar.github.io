@@ -8,4 +8,4 @@ header:
   image: "/images/cover.jpg"
 ---
 
-I am a Data science intern at Micron and a full time Master's student who is passionate about Data-related Technology.
+I am a full time Master's student and a Data Science Enthusiast who likes to spend much of the time reading books and watching documentaries.
