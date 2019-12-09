@@ -8,10 +8,10 @@ tags: [NLP, data science, spark]
 
 PySpark DataFrames is an implementation of the pairs method in Spark, using frames.
 
-#About Data
+# About Data
 Here For demonstration of Document modelling in PySpark we are using State of the Union (SOTU) texts which provides access to the corpus of all the State of the Union addresses from 1790 to 2019.
-SOTU maps the significant content of each State of the Union address so that users can appreciate its key terms and their relative importance.
-The current corpus contains 233 documents. There are 1,785,586 words in the corpus, and 28,072 unique words.
+*SOTU* maps the significant content of each State of the Union address so that users can appreciate its key terms and their relative importance.
+The current corpus contains 233 documents. There are **1,785,586** words in the corpus, and **28,072** unique words.
 
 ```python
 import findspark
@@ -91,7 +91,6 @@ table3 = filter_list.withColumn('word', f.explode(f.col('filtered')))\
 
 table3.show()
 ```
-This gives us the unique count of each word.
     +-------------+-----+
     |         word|count|
     +-------------+-----+
@@ -131,7 +130,8 @@ inner_join = table.join(tb, ta.second == tb.word)\
     .withColumn("P(A/B)", (F.col("count1") / F.col("count")))
 inner_join.show()
 ```
-In PySpark we can use SQL functions in order to manipulate data and get desired transformations
+In PySpark we can use SQL functions in order to manipulate data and get desired transformations.
+
     +-------------+------------+------+------------+-----+--------------------+
     |        first|      second|count1|        word|count|              P(A/B)|
     +-------------+------------+------+------------+-----+--------------------+
