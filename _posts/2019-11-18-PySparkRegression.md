@@ -1,8 +1,9 @@
 ---
 title: "PySpark: Regression "
 date: 2019-11-18
-tags: [Regression models, data science, PySpark]
+tags: [PySpark]
 ---
+# PySpark: Regression Models
 
 ```python
 import matplotlib.pyplot as plt
