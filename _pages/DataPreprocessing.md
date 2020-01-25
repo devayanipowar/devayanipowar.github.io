@@ -4,7 +4,8 @@ permalink: /data-preprocessing/
 title: "Projects"
 author_profile: true
 header:
-  image: "/images/moun.jpg"
+  overlay_image: "/images/moun.jpg"
+  excerpt: "Project"
 ---
 
 {% include group-by-array collection=site.posts field="tags" %}
