@@ -1,13 +1,18 @@
 ---
 layout: archive
 permalink: /data-preprocessing/
-title: "Projects"
+title: "Project"
 author_profile: true
-
+excerpt: "j"
 header:
 
   overlay_image: "/images/main.jpg"
-  excerpt: "Currently working"
+  overlay_filter: 0.5
+  actions:
+    - label: "more"
+    url: ""
+
+
 ---
 
 {% include group-by-array collection=site.posts field="tags" %}
