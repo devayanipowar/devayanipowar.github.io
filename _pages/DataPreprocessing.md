@@ -6,8 +6,8 @@ author_profile: true
 
 header:
 
-  overlay_image	: "/images/main.jpg"
-  excerpt : "Currently working on Disaster Detection using Image Analysis"
+  overlay_image: "/images/main.jpg"
+  excerpt: "Currently working"
 ---
 
 {% include group-by-array collection=site.posts field="tags" %}
