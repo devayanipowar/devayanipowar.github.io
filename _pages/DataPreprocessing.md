@@ -4,13 +4,13 @@ permalink: /data-preprocessing/
 title: "Project"
 author_profile: true
 excerpt: "j"
+
 header:
 
   overlay_image: "/images/main.jpg"
-  overlay_filter: 0.5
   actions:
     - label: "more"
-    url: ""
+      url: ""
 
 
 ---
