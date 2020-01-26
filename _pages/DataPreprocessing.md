@@ -1,16 +1,13 @@
 ---
 layout: archive
 permalink: /data-preprocessing/
-title: "Project"
+title: "Currently working on.."
+excerpt: "Geospatial Disaster Detection"
 author_profile: true
-excerpt: "j"
-
 header:
-
-  overlay_image: "/images/main.jpg"
+  overlay_image	: "/images/moun.jpg"
   actions:
     - label: "more"
-      url: ""
 
 
 ---
