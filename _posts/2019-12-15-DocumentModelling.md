@@ -3,7 +3,7 @@ title: "Document Classification using KNN "
 date: 2019-12-15
 tags: [Text processing, NLP]
 ---
-# Document Classification
+
 
 ```python
 
