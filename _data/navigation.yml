@@ -4,8 +4,8 @@ main:
     url: /about/
   - title: "Projects"
     url: /data-preprocessing/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
+  - title: "References"
+    url: /Books/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"

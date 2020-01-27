@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "Devayani Pawar"
   avatar           : "/images/bio.jpeg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Student | Data Scientist | Explorer"
+  bio              : "Student|Data Scientist|Explorer"
   location         : "Washington DC"
   email            : "dpawar@gmu.edu"
   links:
@@ -289,7 +289,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
   #_pages

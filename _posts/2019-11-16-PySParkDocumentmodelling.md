@@ -192,12 +192,3 @@ For Example: Here We are finding probability(First_word_list/Second_word_list) w
     |    united|    united|   379|    united| 4847| 0.0781926965133072|
     +----------+----------+------+----------+-----+-------------------+
     only showing top 20 rows
-
-
-```python
-from pyspark.sql.functions import desc
-from pyspark.sql.functions import col
-
-sort_df = inner_join.filter("`P(A/B)` > 0.8")
-sort_df.toPandas().to_csv("C:\\Users\\dpawa\\OneDrive\\Documents\\657\\assign_1_657_Pawar\\output\\probabilityandcoocc.csv")
-```
