@@ -52,11 +52,15 @@ remover = StopWordsRemover(inputCol="sentence", outputCol="filtered")
 filter_list = remover.transform(df)
 filter_list = filter_list.drop('sentence')
 rdd1 = filter_list.rdd.flatMap(lambda x: x)
+```
+List has to be converted into set here as we need combinations of all words but we need a non-redundant list.
+**NOTE** : Set is a unordered immutable data structure in python which is helpful to prevent redundancy in a list when needed.
+```python
 rdd_combo = rdd1.flatMap(lambda x: list(set(combinations(x,2))))
 rdd_combo.take(1)
 ```
 
-    [('george', 'favorable')]
+[('george', 'favorable')]
 
 
 ```python
@@ -77,9 +81,6 @@ table = spark.createDataFrame(first,['first','second','count1'])
 ```
 
 
-```python
-
-```
 
 
 ```python

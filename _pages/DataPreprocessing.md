@@ -1,13 +1,12 @@
 ---
 layout: archive
 permalink: /data-preprocessing/
-title: "Currently working on.."
-excerpt: "Geospatial Disaster Detection"
+title: "Projects"
+excerpt: "*"The only way to do great work is to love what you do"*"
 author_profile: true
 header:
   overlay_image	: "/images/moun.jpg"
-  actions:
-    - label: "more"
+
 
 
 ---

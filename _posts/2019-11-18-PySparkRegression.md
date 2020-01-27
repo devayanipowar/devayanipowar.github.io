@@ -35,11 +35,10 @@ sqlContext = SQLContext(sc)
 
 
 ```python
-train = sqlContext.read.format('com.databricks.spark.csv').options(header='true', inferschema='true').load('C:\\Users\\dpawa\\OneDrive\\Documents\\657\\asssign 2\\train.csv')
+train = sqlContext.read.format('com.databricks.spark.csv').options(header='true', inferschema='true').load('C:/train.csv')
 #train.show()
 ```
-
-
+reference: stackoverflow.com
 ```python
 from math import radians, cos, sin, asin, sqrt
 

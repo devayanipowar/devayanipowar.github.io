@@ -3,6 +3,10 @@ title: "Document Classification using KNN "
 date: 2019-12-15
 tags: [Text processing, NLP]
 ---
+# *Text Preprocessing:*
+Lemmatization/Stemming helps to reduce the variations among the words so that necessary words can be processed
+
+Stop-words are removed so that only significant text features would be captured
 
 
 ```python
@@ -16,12 +20,6 @@ from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import TfidfVectorizer
 import operator
 from collections import Counter
-```
-*Text Preprocessing:*
-Lemmatization/Stemming helps to reduce the variations among the words so that necessary words can be processed
-
-Stop-words are removed so tat only significant text features would be captured
-```python
 
 stemmer = PorterStemmer() #stemming
 lemmatizer = WordNetLemmatizer() #lemmatizing
@@ -50,8 +48,9 @@ def lemmatize(text):
 ```
 
 Here, if documents have to be classified according to the genre or feature we have to consider a bag of words approach.
-KNN is implemented from scratch using cosine similarity as a distance measure to predict if the document is classsified accurately enough.
+KNN is implemented from scratch using cosine similarity as a distance measure to predict if the document is classified accurately enough.
 Standard approach is:
+
 1) Consider the lemmatize/stemmed words and convert them to vectors using TF-TfidfVectorizer.
 2) Consider training and testing dataset
 3) Implement KNN to classify the documents accurately.
