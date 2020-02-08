@@ -59,7 +59,7 @@ def haversine(lon1, lat1, lon2, lat2):
     distance =  c * r
     return abs(round(distance, 2))
 ```
-
+Pyspark User Defined Functions (UDF)
 
 ```python
 udf_get_distance = F.udf(haversine)
@@ -386,14 +386,13 @@ dt = DecisionTreeRegressor(featuresCol ='features', labelCol = 'log_duration',ma
 #dt_predictions = dt_model.transform(train_df)
 ```
 
-
 ```python
 #DRt
 dt_evaluator = RegressionEvaluator(labelCol="log_duration", predictionCol="prediction", metricName="rmse")
 #rmse = dt_evaluator.evaluate(dt_predictions)
 #print("Root Mean Squared Error (RMSE) on test data = %g" % rmse)
 ```
-
+# Parameter tuning in Pyspark
 
 ```python
 from pyspark.ml.tuning import ParamGridBuilder, CrossValidator
@@ -543,7 +542,6 @@ tvs = TrainValidationSplit(estimator=lr,
 
 
 ```
-
 
 ```python
 for i in predlist:
