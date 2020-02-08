@@ -15,11 +15,6 @@ from pyspark.sql import functions as F
 from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.regression import DecisionTreeRegressor
 from pyspark.ml.evaluation import RegressionEvaluator
-
-```
-
-
-```python
 import findspark
 findspark.init()
 findspark.find()
@@ -31,14 +26,13 @@ from pyspark.sql import SQLContext
 sc= SparkContext()
 sqlContext = SQLContext(sc)
 
-```
-
-
-```python
 train = sqlContext.read.format('com.databricks.spark.csv').options(header='true', inferschema='true').load('C:/train.csv')
 #train.show()
 ```
 reference: stackoverflow.com
+
+# Feature Engineering
+
 ```python
 from math import radians, cos, sin, asin, sqrt
 
@@ -59,7 +53,7 @@ def haversine(lon1, lat1, lon2, lat2):
     distance =  c * r
     return abs(round(distance, 2))
 ```
-Pyspark User Defined Functions (UDF)
+Pyspark User Defined Functions (UDF) are basically used for
 
 ```python
 udf_get_distance = F.udf(haversine)
@@ -485,35 +479,7 @@ pred_table.show()
 ```python
 pred_table1 = dtpredictions_ert.groupBy('prediction').count()
 pred_table1.show()
-```
-
-    +------------------+------+
-    |        prediction| count|
-    +------------------+------+
-    | 6.284032803395688| 27037|
-    |6.0485785145505995| 28532|
-    | 5.946427673262689| 26135|
-    | 6.141958153601273| 35344|
-    | 6.551517246541201| 22270|
-    |7.1425228143753525| 38084|
-    | 7.545394329958232| 48256|
-    | 7.298411167160363| 49836|
-    |5.7496543843581795| 13042|
-    | 7.924025245291648| 26899|
-    |6.7242448681574745| 14875|
-    +------------------+------+
-    only showing top 20 rows
-
-
-
-
-```python
 predlist = pred_table.select("prediction").collect()
-
-```
-
-
-```python
 predlist = pred_table.select("prediction").rdd.flatMap(lambda x: x).collect()
 predlist[0]
 ```
@@ -553,8 +519,6 @@ for i in predlist:
     lr_predictions = model.transform(newdf)
     rmse = dt_evaluator.evaluate(lr_predictions)
     print("mae on test data = %g" % rmse)
-
-
 
 ```
 
