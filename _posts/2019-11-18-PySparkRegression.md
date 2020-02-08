@@ -1,7 +1,7 @@
 ---
 title: "PySpark: Regression "
 date: 2019-11-18
-tags: [PySpark]
+tags: [PySpark,Regression]
 ---
 # PySpark: Regression Models
 

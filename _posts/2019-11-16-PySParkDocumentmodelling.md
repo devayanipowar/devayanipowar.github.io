@@ -1,7 +1,7 @@
 ---
 title: "PySpark: Document Modelling "
 date: 2019-11-16
-tags: [PySpark, Text Processing]
+tags: [PySpark, NLP]
 ---
 
 # PySpark DataFrames

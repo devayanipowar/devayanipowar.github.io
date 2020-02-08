@@ -1,7 +1,7 @@
 ---
 title: "Document Classification using KNN "
 date: 2019-12-15
-tags: [Text processing, NLP]
+tags:  [NLP]
 ---
 # *Text Preprocessing:*
 Lemmatization/Stemming helps to reduce the variations among the words so that necessary words can be processed
