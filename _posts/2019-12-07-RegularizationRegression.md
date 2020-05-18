@@ -1,5 +1,5 @@
 ---
-title: "Regularization "
+title: "Suggesting product prices for e-commerce company"
 date: 2019-12-07
 tags: [Regression]
 ---

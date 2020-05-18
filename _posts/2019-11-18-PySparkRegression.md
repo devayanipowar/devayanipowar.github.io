@@ -3,7 +3,7 @@ title: "PySpark: Regression "
 date: 2019-11-18
 tags: [PySpark,Regression]
 ---
-# PySpark: Regression Models
+# Predict Accurate Trip duration of a Passenger using Pyspark
 
 ```python
 import matplotlib.pyplot as plt

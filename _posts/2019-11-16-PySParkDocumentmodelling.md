@@ -1,5 +1,5 @@
 ---
-title: "PySpark: Document Modelling "
+title: "PySpark: Document Classification "
 date: 2019-11-16
 tags: [PySpark, NLP]
 ---
@@ -80,9 +80,6 @@ first = rdd_f.map(lambda x : (x[0][0],x[0][1],x[1]))
 table = spark.createDataFrame(first,['first','second','count1'])
 ```
 
-
-
-
 ```python
 import pyspark.sql.functions as f
 
@@ -103,22 +100,8 @@ table3.show()
     |apprehensions|   37|
     |    connected|  177|
     |      implore|    4|
-    |          art|   51|
-    | accumulation|   50|
-    |     inimical|    7|
-    |       spared|   39|
-    |  transmitted|  126|
-    |         clog|    2|
-    |precautionary|   14|
-    |    involving|   85|
-    |    destitute|   27|
-    |  unequivocal|   11|
-    |  unavoidably|   12|
     |gratification|   41|
     +-------------+-----+
-    only showing top 20 rows
-
-
 
 ```python
 import pyspark.sql.functions as F
@@ -145,21 +128,7 @@ In PySpark we can use SQL functions in order to manipulate data and get desired 
     |     military|  commanders|    16|  commanders|   58| 0.27586206896551724|
     |        naval|  commanders|    15|  commanders|   58| 0.25862068965517243|
     |         many|   connected|     9|   connected|  177| 0.05084745762711865|
-    |    secretary|   connected|    10|   connected|  177| 0.05649717514124294|
-    |      service|   connected|    15|   connected|  177|  0.0847457627118644|
-    |      subject|   connected|     9|   connected|  177| 0.05084745762711865|
-    |circumstances|   connected|     7|   connected|  177| 0.03954802259887006|
-    |   government|   connected|    11|   connected|  177|0.062146892655367235|
-    |       report|   connected|    10|   connected|  177| 0.05649717514124294|
-    |     question|   connected|     6|   connected|  177| 0.03389830508474576|
-    |          men|   connected|     7|   connected|  177| 0.03954802259887006|
-    |    important|   connected|     8|   connected|  177| 0.04519774011299435|
-    |          war|   connected|    11|   connected|  177|0.062146892655367235|
-    |         last|   connected|     7|   connected|  177| 0.03954802259887006|
     +-------------+------------+------+------------+-----+--------------------+
-    only showing top 20 rows
-
-
 
 
 ```python
@@ -178,18 +147,4 @@ For Example: Here We are finding probability(First_word_list/Second_word_list) w
     |      last|      year|   626|      year| 3946|0.15864166244298022|
     |    states|government|   570|government| 7032| 0.0810580204778157|
     |government|    united|   563|    united| 4847|0.11615432226119249|
-    |government|government|   549|government| 7032| 0.0780716723549488|
-    |  congress|    states|   503|    states| 6508|0.07728948985863553|
-    |     great|   britain|   496|   britain|  530| 0.9358490566037736|
-    |government|    people|   474|    people| 4017| 0.1179985063480209|
-    |     state|     union|   461|     union| 1330|0.34661654135338343|
-    |    united|government|   448|government| 7032|0.06370875995449374|
-    |    states|    united|   447|    united| 4847|0.09222199298535176|
-    |   federal|government|   445|government| 7032|0.06328213879408419|
-    |  american|    people|   442|    people| 4017|0.11003236245954692|
-    |      last|   session|   418|   session|  805| 0.5192546583850932|
-    |      upon|government|   391|government| 7032|0.05560295790671217|
-    |      last|  congress|   388|  congress| 5025| 0.0772139303482587|
-    |    united|    united|   379|    united| 4847| 0.0781926965133072|
     +----------+----------+------+----------+-----+-------------------+
-    only showing top 20 rows
