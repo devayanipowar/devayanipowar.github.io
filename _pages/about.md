@@ -10,6 +10,8 @@ header:
 
 ---
 
-I am a full-time Master's student and a Data Science Enthusiast who likes to spend much of the time reading books, watching documentaries and exploring ways to deal with data. This portfolio is to keep track of how I started my journey of setting foot in Data Science and what I am learning as I dive deeper. I am including all the references for Books and links I used in the process. If you want to start with Data science or have any suggestions reach me at devayani3196@yahoo.com.
+I am a Data Scientist who spends much of the time exploring ways to deal with data, reading books, and watching documentaries. I have completed my master's in Data Science from George Mason University and right now I am honing my Machine Learning skills for Computer Vision Applications. My favorite Machine Learning model is KNN( the first one I implemented from scratch!)  and my favorite book is The Alchemist by Paulo Coelho.
+ 
+ 
 
 *"I started out with nothing and I still have most of it" - Michael Davis*

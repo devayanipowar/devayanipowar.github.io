@@ -1,9 +1,9 @@
 ---
-title: "PySpark: Regression "
+title: " Predict Trip duration of a Passenger using Pyspark"
 date: 2019-11-18
 tags: [PySpark,Regression]
 ---
-# Predict Accurate Trip duration of a Passenger using Pyspark
+# This Project implements ensemble regression tree and highlights how it is different from regression tree 
 
 ```python
 import matplotlib.pyplot as plt
@@ -32,6 +32,7 @@ train = sqlContext.read.format('com.databricks.spark.csv').options(header='true'
 reference: stackoverflow.com
 
 # Feature Engineering
+Here we are using lat-lon data to create a new feature for trip distance using Haversine formula 
 
 ```python
 from math import radians, cos, sin, asin, sqrt
@@ -53,27 +54,19 @@ def haversine(lon1, lat1, lon2, lat2):
     distance =  c * r
     return abs(round(distance, 2))
 ```
-Pyspark User Defined Functions (UDF) are basically used for
+Spark stores data in dataframes or RDDs. Here I have used dataframes hence I cannot create custom functions without registering the funstion first i.e to save it as if it were one of the built-in database functions first before 
+using it. Thats where  User Defined Functions (UDF) comes in.
 
 ```python
 udf_get_distance = F.udf(haversine)
 ```
 
-
 ```python
 train = (train.withColumn('DISTANCE', udf_get_distance(
 train.pickup_longitude, train.pickup_latitude,
 train.dropoff_longitude, train.dropoff_latitude)))
-```
-
-
-```python
 columns_to_drop = ['pickup_longitude', 'pickup_latitude','dropoff_longitude','dropoff_latitude']
 train = train.drop(*columns_to_drop)
-```
-
-
-```python
 train.describe().show()
 ```
 
@@ -88,20 +81,12 @@ train.describe().show()
     +-------+---------+------------------+------------------+------------------+-----------------+------------------+
 
 
-
-
 ```python
 train = train.withColumn('store_and_fwd_flag', F.when(train.store_and_fwd_flag == 'N', 0).otherwise(1))
 train.take(1)
 ```
 
-
-
-
     [Row(id='id2875421', vendor_id=2, pickup_datetime=datetime.datetime(2016, 3, 14, 17, 24, 55), dropoff_datetime=datetime.datetime(2016, 3, 14, 17, 32, 30), passenger_count=1, store_and_fwd_flag=0, trip_duration=455, DISTANCE='1.5')]
-
-
-
 
 ```python
 import pyspark.sql.functions as F
@@ -124,43 +109,12 @@ train.take(1)
 
 ```
 
-
-
-
     [Row(id='id2875421', vendor_id=2, pickup_datetime=datetime.datetime(2016, 3, 14, 17, 24, 55), dropoff_datetime=datetime.datetime(2016, 3, 14, 17, 32, 30), passenger_count=1, store_and_fwd_flag=0, trip_duration=455, DISTANCE='1.5', Date='2016-03-14', Time='17:24:55', Year='2016', Month='03', Day='14', weekDay='1', hour='17', minutes='24', seconds='55')]
-
-
-
-
-```python
-train = train.withColumn("Year", train["Year"].cast(IntegerType()))
-train = train.withColumn("weekDay", train["weekDay"].cast(IntegerType()))
-train = train.withColumn("Month", train["Month"].cast(IntegerType()))
-train = train.withColumn("Day", train["Day"].cast(IntegerType()))
-train = train.withColumn("hour", train["hour"].cast(IntegerType()))
-train = train.withColumn("minutes", train["minutes"].cast(IntegerType()))
-train = train.withColumn("seconds", train["seconds"].cast(IntegerType()))
-train = train.withColumn("DISTANCE", train["DISTANCE"].cast(IntegerType()))
-
-train.take(1)
-```
-
-
-
-
-    [Row(id='id2875421', vendor_id=2, pickup_datetime=datetime.datetime(2016, 3, 14, 17, 24, 55), dropoff_datetime=datetime.datetime(2016, 3, 14, 17, 32, 30), passenger_count=1, store_and_fwd_flag=0, trip_duration=455, DISTANCE=1, Date='2016-03-14', Time='17:24:55', Year=2016, Month=3, Day=14, weekDay=1, hour=17, minutes=24, seconds=55)]
-
-
 
 
 ```python
 columns_to_drop = ['pickup_datetime','dropoff_datetime', 'Date','Time']
 train = train.drop(*columns_to_drop)
-```
-
-
-```python
-train.show(1)
 ```
 
     +---------+---------+---------------+------------------+-------------+--------+----+-----+---+-------+----+-------+-------+
@@ -169,8 +123,6 @@ train.show(1)
     |id2875421|        2|              1|                 0|          455|       0|2016|    3| 14|      1|  17|     24|     55|
     +---------+---------+---------------+------------------+-------------+--------+----+-----+---+-------+----+-------+-------+
     only showing top 1 row
-
-
 
 
 ```python
@@ -185,8 +137,6 @@ train.show(1)
     |id2875421|        2|              1|                 0|          455|       1|2016|    3| 14|      1|  17|     24|     55|6.12029741895095|
     +---------+---------+---------------+------------------+-------------+--------+----+-----+---+-------+----+-------+-------+----------------+
     only showing top 1 row
-
-
 
 
 ```python
@@ -211,15 +161,10 @@ train.printSchema()
      |-- log_duration: double (nullable = true)
 
 
-
-
 ```python
 train.describe().toPandas()
 
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -346,8 +291,6 @@ train.describe().toPandas()
 </div>
 
 
-
-
 ```python
 vectorAssembler = VectorAssembler(inputCols = ['vendor_id', 'passenger_count', 'store_and_fwd_flag','DISTANCE', 'Year', 'Month','Day','weekDay','hour','minutes','seconds'], outputCol = 'features')
 vtrain = vectorAssembler.transform(train)
@@ -365,22 +308,13 @@ vtrain.show(3)
     only showing top 3 rows
 
 
-
-
 ```python
 splits = vtrain.randomSplit([0.8, 0.2])
 train_df = splits[0]
 test_df = splits[1]
-```
-
-
-```python
 dt = DecisionTreeRegressor(featuresCol ='features', labelCol = 'log_duration',maxDepth = 2)
 #dt_model = dt.fit(train_df)
 #dt_predictions = dt_model.transform(train_df)
-```
-
-```python
 #DRt
 dt_evaluator = RegressionEvaluator(labelCol="log_duration", predictionCol="prediction", metricName="rmse")
 #rmse = dt_evaluator.evaluate(dt_predictions)
@@ -405,12 +339,6 @@ dtcv = CrossValidator(estimator = dt,
 dtcvModel = dtcv.fit(train_df)
 print(dtcvModel)
 dtpredictions = dtcvModel.transform(test_df)
-
-
-```
-    CrossValidatorModel_26a4ed946038
-
-```python
 mae = dt_evaluator.evaluate(dtpredictions)
 print(" Mean Absolute Error (MAE) on test data = %g" % mae)
 ```
@@ -518,22 +446,8 @@ for i in predlist:
     model = tvs.fit(newdft)
     lr_predictions = model.transform(newdf)
     rmse = dt_evaluator.evaluate(lr_predictions)
-    print("mae on test data = %g" % rmse)
+    print("mae on test data = %g" % mae)
 
 ```
-
-    mae on test data = 0.401267
-    mae on test data = 0.500687
-    mae on test data = 0.478158
-    mae on test data = 0.503749
-    mae on test data = 0.403103
-    mae on test data = 0.346481
-    mae on test data = 0.361704
-    mae on test data = 0.370933
-    mae on test data = 0.438178
-    mae on test data = 0.358747
-    mae on test data = 0.353605
-    mae on test data = 0.832952
-    mae on test data = 0.360192
-    mae on test data = 0.321652
-    mae on test data = 0.388788
+Average MAE = 0.32
+    
