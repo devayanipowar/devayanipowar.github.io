@@ -4,6 +4,8 @@ date: 2019-11-16
 tags: [PySpark, NLP]
 ---
 
+# Text Classification
+
 # PySpark DataFrames
 
 PySpark DataFrames is an implementation of the pairs method in Spark, using frames.

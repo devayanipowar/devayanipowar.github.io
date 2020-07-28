@@ -3,7 +3,16 @@ title: " Predict Trip duration of a Passenger using Pyspark"
 date: 2019-11-18
 tags: [PySpark,Regression]
 ---
-# This Project implements ensemble regression tree and highlights how it is different from regression tree 
+# Regression
+
+# This Project implements ensemble regression tree and highlights how it performs compared to a regression tree
+
+# Concepts Covered
+
+- PySpark Functions
+- Feature Engineering and generalization
+- Logarithmic transformations and skewed data
+- Ensemble models - Model Selection
 
 ```python
 import matplotlib.pyplot as plt
@@ -32,7 +41,7 @@ train = sqlContext.read.format('com.databricks.spark.csv').options(header='true'
 reference: stackoverflow.com
 
 # Feature Engineering
-Here we are using lat-lon data to create a new feature for trip distance using Haversine formula 
+Here we are using lat-lon data to generate a new feature for trip distance using Haversine formula
 
 ```python
 from math import radians, cos, sin, asin, sqrt
@@ -54,7 +63,7 @@ def haversine(lon1, lat1, lon2, lat2):
     distance =  c * r
     return abs(round(distance, 2))
 ```
-Spark stores data in dataframes or RDDs. Here I have used dataframes hence I cannot create custom functions without registering the funstion first i.e to save it as if it were one of the built-in database functions first before 
+Spark stores data in dataframes or RDDs. Here I have used dataframes hence I cannot create custom functions without registering the funstion first i.e to save it as if it were one of the built-in database functions first before
 using it. Thats where  User Defined Functions (UDF) comes in.
 
 ```python
@@ -124,6 +133,9 @@ train = train.drop(*columns_to_drop)
     +---------+---------+---------------+------------------+-------------+--------+----+-----+---+-------+----+-------+-------+
     only showing top 1 row
 
+
+
+The target data (Duration) is seen to be left skewed hence we use logarithmic transformation to get a normal distribution.
 
 ```python
 from pyspark.sql.functions import log
@@ -450,4 +462,3 @@ for i in predlist:
 
 ```
 Average MAE = 0.32
-    

@@ -3,6 +3,9 @@ title: "Document Classification using KNN "
 date: 2019-12-15
 tags:  [NLP]
 ---
+
+# KNN
+
 # *Text Preprocessing:*
 Lemmatization/Stemming helps to reduce the variations among the words so that necessary words can be processed
 
@@ -51,10 +54,10 @@ Here, if documents have to be classified according to the genre or feature we ha
 KNN is implemented from scratch using cosine similarity as a distance measure to predict if the document is classified accurately enough.
 Standard approach is:
 
-1) Consider the lemmatize/stemmed words and convert them to vectors using TF-TfidfVectorizer.
-2) Consider training and testing dataset
-3) Implement KNN to classify the documents accurately.
-4) Train the model and test the model.
+- Consider the lemmatize/stemmed words and convert them to vectors using TF-TfidfVectorizer.
+-  Consider training and testing dataset
+-  Implement KNN to classify the documents accurately.
+-  Train the model and test the model.
 
 
 ```python
