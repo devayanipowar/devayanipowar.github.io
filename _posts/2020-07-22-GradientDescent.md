@@ -1,10 +1,11 @@
 ---
 title: "Linear Regression: Gradient Descent"
-date: 
-tags: [Regression]
+date: 2020-07-22
+tags: [Regression, Machine Learning]
 ---
 
 
+# Linear Regression and Gradient Descent
 
 ```python
 from sklearn.model_selection import train_test_split
