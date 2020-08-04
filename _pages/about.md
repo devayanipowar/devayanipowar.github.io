@@ -6,7 +6,7 @@ author_profile: true
 
 header:
 
-  overlay_image: "/images/moun.jpg"
+  overlay_image: "/images/nyu_unsplashn.jpg"
 
 ---
 
