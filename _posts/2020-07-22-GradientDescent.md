@@ -38,7 +38,7 @@ theta=np.zeros((3,1))
 
 ```
 
-# Closed-Form Equation Vs Gradient Descent Vs Stochastic Gradient Descent
+## Closed-Form Equation Vs Gradient Descent Vs Stochastic Gradient Descent
 
 [Explain the differences between alternative approaches to estimating the parameters of a model](https://sebastianraschka.com/faq/docs/closed-form-vs-gd.html)
 
