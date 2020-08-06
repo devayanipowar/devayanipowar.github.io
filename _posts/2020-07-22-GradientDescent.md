@@ -127,11 +127,10 @@ plt.title("loss function using Gradient Descent")
 
 
 
-![png](_posts/GradientDescent_files/GradientDescent_12_1.png)
+![png](/GradientDescent_files/GradientDescent_12_1.png)
 
 
-### Stochastic Gradient Descent
-
+### Stochastic Gradient Descent/
 
 ```python
 def stocashtic_gradient_descent(X, y, theta, alpha, iterations):
