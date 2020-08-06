@@ -127,7 +127,7 @@ plt.title("loss function using Gradient Descent")
 
 
 
-![png](GradientDescent_files/GradientDescent_12_1.png)
+![png](_posts/GradientDescent_files/GradientDescent_12_1.png)
 
 
 ### Stochastic Gradient Descent
@@ -320,24 +320,7 @@ ypred=predictions.reshape(m1,1)
 eval1,ehistory1 = gradientDescent(X_test,ypred,theta,0.08,150)
 print(eval1)
 
-```
 
-
-```python
-def computeCostR(X,y,theta,Lambda):
-
-    m=len(y)
-    err=((np.dot(X, theta)) - y)**2
-    reg = (Lambda/(2*m)) * (sum(theta**2))
-    jtheta = (np.sum(err)/(2*m)) + reg
-    j_0= 1/m * (X.transpose() @ ((np.dot(X, theta)) - y))[0]
-    j_1 = 1/m * (X.transpose() @((np.dot(X, theta)) - y))[1:] + (Lambda/m)* theta[1:]
-    gradient= np.vstack((j_0[:,np.newaxis],j_1))
-    return jtheta[0], gradient
-```
-
-
-```python
 def computeCostR(X,y,theta,Lambda):
 
     m=len(y)
@@ -350,10 +333,6 @@ def computeCostR(X,y,theta,Lambda):
     grad= np.vstack((j_0[:,np.newaxis],j_1))
     return regcost[0], grad
 
-```
-
-
-```python
 computeCostR(X,y,theta,0.1)
 
 ```
