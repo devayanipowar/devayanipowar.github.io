@@ -125,9 +125,7 @@ plt.title("loss function using Gradient Descent")
     Text(0.5, 1.0, 'loss function using Gradient Descent')
 
 
-
-
-![png](/GradientDescent_files/GradientDescent_12_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/GradientDescent_12_1" alt="loss function using Gradient Descent">
 
 
 ### Stochastic Gradient Descent/
