@@ -7,6 +7,13 @@ tags: [Regression, Machine Learning]
 
 # Linear Regression and Gradient Descent
 
+Linear Regression & Gradient Descent is the first algorithm I came across When I decided to get into Data Science through Andrew Ng's Machine Learning course and then through my Master's Program
+Every other algorithm I implemented since is based on these basic algorithms and it fascinates me every time. Lets dive into it:
+
+### Linear Regression:
+
+
+
 ```python
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
