@@ -6,6 +6,9 @@ tags: [Regression]
 
 # Regularization Regression
 
+
+### Dataset : Mercari website data
+
 ```python
 
 from nltk import word_tokenize
