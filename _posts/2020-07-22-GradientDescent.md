@@ -85,8 +85,6 @@ computeCost(X,y,theta)
 ```
 
 
-
-
     65591548106.45744
 
 
@@ -181,7 +179,7 @@ plt.title("Loss function using Gradient STOCHASTIC Descent")
     Text(0.5, 1.0, 'Loss function using Gradient STOCHASTIC Descent')
 
 
-![png](GradientDescent_files/GradientDescent_16_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/GradientDescent_16_1.png" alt="loss function using stochastic Gradient Descent">
 
 
 
@@ -252,7 +250,8 @@ plt.plot(y_test)
 
 ```
 
-![png](GradientDescent_files/GradientDescent_24_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/GradientDescent_24_1.png" alt="Prediction vs ground truth">
+
 
 
 
@@ -267,7 +266,7 @@ plt.plot(y_test)
 
 ```
 
-![png](GradientDescent_files/GradientDescent_25_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/GradientDescent_25_1.png" alt="Prediction vs ground truth">
 
 
 
@@ -380,4 +379,4 @@ plt.title("loss function using Regularized Gradient Descent")
     Text(0.5, 1.0, 'loss function using Regularized Gradient Descent')
 
 
-![png](GradientDescent_files/GradientDescent_35_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/GradientDescent_35_1.png" alt="loss function using Regularized Gradient Descent">
