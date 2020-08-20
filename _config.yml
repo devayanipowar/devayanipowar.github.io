@@ -108,14 +108,14 @@ analytics:
 # Site Author
 author:
   name             : "Devayani Pawar"
-  avatar           : "/images/bio.jpeg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/bio.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Data Scientist"
   location         : "New York"
   email            : "devayani3196@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:your.name@email.com
+       url: mailto: "devayani3196@gmail.com"
     - label: "linkedin"
       icon: "fas fa-fw fa-link"
       url: "https://www.linkedin.com/in/devayanip/"
@@ -127,7 +127,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/devayanipowar?tab=repositories"
+      url: "https://github.com/devayanipowar/Data-Science-Inventory"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -137,7 +137,7 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url:
+       url: "https://twitter.com/devayanip_310"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:
@@ -297,5 +297,5 @@ defaults:
     path: ""
     type: Pages
     values:
-    layout : splash
+    layout : single
     author_profile: true
