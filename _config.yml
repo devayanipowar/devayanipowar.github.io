@@ -297,5 +297,5 @@ defaults:
     path: ""
     type: Pages
     values:
-    layout : single
+    layout : splash
     author_profile: true
