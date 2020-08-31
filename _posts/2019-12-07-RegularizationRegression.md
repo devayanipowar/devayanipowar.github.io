@@ -15,17 +15,15 @@ Companies have to deal with several kinds of items from various retailers at var
 
 We are using a dataset from a online website which has about 1.5 million items.
 
-> One of this product costs $49 and other costs $112.Looking at such type of products can you guess which product costs which one?
+One of this product costs $49 and other costs $112.Looking at such type of products can you guess which product costs which one?
 
-+-------------------------+--------------------------+
-|       ItemA             |  ItemB                   |
-+-------------------------+--------------------------+
-| Puma women's Long sleeve| Vince long-sleeve turtle |
-| turtle neck tee, size L,| neck tee, size L,        |
-| Great condition         | Great condition          |
-+-------------------------+--------------------------+
+> Item A - Puma women's Long sleeve ,  turtle neck tee, size L, Great condition  
 
-> Dataset has three main components - Item name, Item Category and Item description. It also has supporting features like condition of item and brand of item.
+> Item B - Vince long-sleeve turtle, neck tee, size L, Great condition  
+
+
+
+* Dataset has three main components - Item name, Item Category and Item description. It also has supporting features like condition of item and brand of item.
 
 *Goal* : To select algorithms that  can predict the  product prices using the features like Item description and Item category looking at the historical data.
 

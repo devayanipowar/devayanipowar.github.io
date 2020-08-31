@@ -5,7 +5,7 @@ tags: [PySpark,Regression]
 ---
 # Regression
 
-# This Project implements ensemble regression tree and highlights how it performs compared to a regression tree
+#### This Project implements ensemble regression tree and highlights how it performs compared to a regression tree
 
 # Concepts Covered
 
