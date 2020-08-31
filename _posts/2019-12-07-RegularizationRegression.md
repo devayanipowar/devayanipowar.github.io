@@ -1,13 +1,34 @@
 ---
 title: "Suggesting product prices for e-commerce company"
-date: 2019-12-07
+date: 2019-7-07
 tags: [Regression]
 ---
 
 # Regularization Regression
 
+This was my first project when I started in Data
 
 ### Dataset : Mercari website data
+
+Online shopping is increasing at a rapid rate with companies like Amazon Inc., eBay, Newegg, etc.
+Companies have to deal with several kinds of items from various retailers at various scales as there are many features that could affect the price. Hence we try to suggest the price to the retailers by using the history of the  past products sold.
+
+We are using a dataset from a online website which has about 1.5 million items.
+
+> One of this product costs $49 and other costs $112.Looking at such type of products can you guess which product costs which one?
+
++-------------------------+--------------------------+
+|       ItemA             |  ItemB                   |
++-------------------------+--------------------------+
+| Puma women's Long sleeve| Vince long-sleeve turtle |
+| turtle neck tee, size L,| neck tee, size L,        |
+| Great condition         | Great condition          |
++-------------------------+--------------------------+
+
+> Dataset has three main components - Item name, Item Category and Item description. It also has supporting features like condition of item and brand of item.
+
+*Goal* : To select algorithms that  can predict the  product prices using the features like Item description and Item category looking at the historical data.
+
 
 ```python
 
