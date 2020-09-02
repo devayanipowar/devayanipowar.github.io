@@ -65,7 +65,7 @@ def rmsle(y, y_pred):
     return (sum(to_sum) * (1.0/len(y))) ** 0.5
 ```
 
-### Exploratory Data Analysis
+## Exploratory Data Analysis
 
 In order to understand the dataset and to identify any obvious patterns we use EDA in the first phase of Data Modeling.
 
@@ -75,7 +75,7 @@ In order to understand the dataset and to identify any obvious patterns we use E
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/regres_reg/reg.png" alt="Distribution of price">
 
-### Data Preprocessing & cleaning
+## Data Preprocessing & cleaning
 
 This data set had mostly categorical features which would need thorough data cleaning and transformation in order to extract necessary features. Removed rows with price = 0 in our case and handled missing values so that we don't encounter errors in modeling phase.
 
@@ -102,11 +102,11 @@ def clean_missing(dataset):
     return dataset
 ```
 
-### Feature engineering
+## Feature engineering
 
 Transform Categorical features to vectors using [Count vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html), [Label Binarizer](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelBinarizer.html), and [TF-IDF](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html) and [one hot encoding](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html)techniques
 
-Concepts:
+### Concepts:
 - [Feature Extraction](http://scikit-learn.org/stable/modules/feature_extraction.html)
 - [Text Analytics](http://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html)
 - [Bag of Words](https://en.wikipedia.org/wiki/Bag-of-words_model)
@@ -183,14 +183,14 @@ X = scipy.sparse.hstack((X_dummies,
 
 
 ```
-### Modeling
+## Modeling
 
 **Why Regularization ?** :
 As the data has items with price $ 3- 2000, it shows lot of variation with price. We have lot of information which is essentially just noise hence to overcome the problem of overfitting we choose regularization.
 Regularization  allows shrinking of parameters which helps with collinearity and also reduces model complexity.
 
 
-Concepts:
+### Concepts:
 - [Regression](https://www.youtube.com/watch?v=WWqE7YHR4Jc)
 - [Regularization](https://en.wikipedia.org/wiki/Regularization_(mathematics))
 - [Ridge Regression](https://en.wikipedia.org/wiki/Tikhonov_regularization)
