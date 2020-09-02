@@ -9,9 +9,9 @@ toc_label: "Table of Contents"
 
 This was my first project when I started in Data back in 2018, I was able to learn many concepts on the way.
 
-### Dataset
+## Dataset
 
-Mercari website data
+### Mercari website data
 
 Online shopping is increasing at a rapid rate with companies like Amazon Inc., eBay, Newegg, etc.
 Companies have to deal with several kinds of items from various retailers at various scales as there are many features that could affect the price. Hence we try to suggest the price to the retailers by using the history of the  past products sold.
