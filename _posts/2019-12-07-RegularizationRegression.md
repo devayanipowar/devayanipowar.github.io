@@ -3,13 +3,14 @@ title: "Suggesting product prices for e-commerce company"
 date: 2020-8-07
 tags: [Regression]
 toc: true
+Excerpt: "Regularization in Regression"
 toc_label: "Table of Contents"
 toc_icon: "cog"
 ---
 
 # Regression
 
-This was my first project when I started in Data
+This is my first project when I started in Data back in 2018
 
 ### Dataset:
 
@@ -102,7 +103,29 @@ def clean_missing(dataset):
     dataset["brand_name"] = dataset["brand_name"].astype("category")
 
     return dataset
+```
 
+### Feature engineering
+
+Transform Categorical features to vectors using [Count vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html), [Label Binarizer](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelBinarizer.html), and [TF-IDF](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html) and [one hot encoding](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html)techniques
+
+Concepts:
+- [Feature Extraction](http://scikit-learn.org/stable/modules/feature_extraction.html)
+- [Text Analytics](http://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html)
+- [Bag of Words](https://en.wikipedia.org/wiki/Bag-of-words_model)
+- [Tokenization](https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization)
+- [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+- [Label Binarizer vs one hot encoder](https://stackoverflow.com/questions/50473381/scikit-learns-labelbinarizer-vs-onehotencoder)
+
+**[Data Transformation](https://en.wikipedia.org/wiki/Data_transformation_(statistics))**
+
+[Logarithmic transformation](http://onlinestatbook.com/2/transformations/log.html) to smooth long tailed or skewed data to more of a normal distribution to be used in regression setting.
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/log.png" alt="log transformation">
+
+
+
+```python
 def count_vectorize(df, category):
 	cvect = CountVectorizer(tokenizer=Stemmer , stop_words = 'english', min_df=mindf)
 	return cvect.fit_transform(df[category])
@@ -117,9 +140,7 @@ def tfidf_vectorize(df, category):
 def label_binarize(df, category):
 	labelbinar = LabelBinarizer(sparse_output=True)
 	return labelbinar.fit_transform(df[category])
-```
 
-```python
 df_trains = pd.read_csv('trainModel.tsv', sep='\t')
 df_test = pd.read_csv('testModel.tsv', sep='\t')
 df_train=df_trains.sample(frac=0.3,random_state=200)
@@ -164,13 +185,25 @@ X = scipy.sparse.hstack((X_dummies,
                          X_name)).tocsr()
 
 
+```
+### Modeling:
+
+Concepts:
+- [Regression]()
+- [Regularization]()
+- [Ridge Regression]()
+- [Multi-collinearity]()
+
+```python
+
+
 from sklearn.ensemble import RandomForestRegressor
 
 #the different regressions we used
-#model = Ridge(alpha=0.8, solver = "lsqr", fit_intercept=False)
+model = Ridge(alpha=0.8, solver = "lsqr", fit_intercept=False)
 #model = Lasso(alpha=0.8)
 X_train = X[:nrow_train]
-model = RandomForestRegressor(n_estimators= 300, max_features= 'sqrt', n_jobs= -1, max_depth=16, min_samples_split=5, min_samples_leaf=5)
+#model = RandomForestRegressor(n_estimators= 300, max_features= 'sqrt', n_jobs= -1, max_depth=16, min_samples_split=5, min_samples_leaf=5)
 model.fit(X_train, y_train)
 
 print('Predicting validation set')
