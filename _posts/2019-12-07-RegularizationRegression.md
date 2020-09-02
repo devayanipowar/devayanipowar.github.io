@@ -3,15 +3,17 @@ title: "Suggesting product prices for e-commerce company"
 date: 2020-8-07
 tags: [Regression]
 toc: true
-toc_label: "My Table of Contents"
+toc_label: "Table of Contents"
 toc_icon: "cog"
 ---
 
-# Regularization Regression
+# Regression
 
 This was my first project when I started in Data
 
-### Dataset : Mercari website data
+### Dataset:
+
+Mercari website data
 
 Online shopping is increasing at a rapid rate with companies like Amazon Inc., eBay, Newegg, etc.
 Companies have to deal with several kinds of items from various retailers at various scales as there are many features that could affect the price. Hence we try to suggest the price to the retailers by using the history of the  past products sold.
@@ -64,9 +66,21 @@ def rmsle(y, y_pred):
     to_sum = [(math.log(y_pred[i] + 1) - math.log(y[i] + 1)) ** 2.0 for i,pred in enumerate(y_pred)]
     return (sum(to_sum) * (1.0/len(y))) ** 0.5
 ```
-# Data Preprocessing (Cleaning and transformation)
 
-This data set had mostly categorical features which would need Thourough data cleaning and transformationg in order to extract necessary features.
+### Exploratory Data Analysis
+
+In order to understand the dataset and to identify any obvious patterns we use EDA in the first phase of Data Modeling.
+
+[Refer for more information](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/eda.png" alt="Condition vs price">
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/reg.png" alt="Distribution of price">
+
+### Data Preprocessing & cleaning
+
+This data set had mostly categorical features which would need thorough data cleaning and transformation in order to extract necessary features. Removed rows with price = 0 in our case and handled missing values so that we don't encounter errors in modeling phase.
+
 
 ```python
 def clean_missing(dataset):
