@@ -1,7 +1,10 @@
 ---
 title: "Suggesting product prices for e-commerce company"
-date: 2019-7-07
+date: 2020-8-07
 tags: [Regression]
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
 ---
 
 # Regularization Regression
@@ -21,9 +24,7 @@ One of this product costs $49 and other costs $112.Looking at such type of produ
 
 > Item B - Vince long-sleeve turtle, neck tee, size L, Great condition  
 
-
-
-* Dataset has three main components - Item name, Item Category and Item description. It also has supporting features like condition of item and brand of item.
+ Dataset has three main components - Item name, Item Category and Item description. It also has supporting features like condition of item and brand of item.
 
 *Goal* : To select algorithms that  can predict the  product prices using the features like Item description and Item category looking at the historical data.
 
