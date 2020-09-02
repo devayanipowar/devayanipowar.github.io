@@ -7,11 +7,9 @@ Excerpt: "Regularization in Regression"
 toc_label: "Table of Contents"
 ---
 
-# Regression
-
 This was my first project when I started in Data back in 2018, I was able to learn many concepts on the way.
 
-### Dataset:
+### Dataset
 
 Mercari website data
 
@@ -185,7 +183,12 @@ X = scipy.sparse.hstack((X_dummies,
 
 
 ```
-### Modeling:
+### Modeling
+
+**Why Regularization ?** :
+As the data has items with price $ 3- 2000, it shows lot of variation with price. We have lot of information which is essentially just noise hence to overcome the problem of overfitting we choose regularization.
+Regularization  allows shrinking of parameters which helps with collinearity and also reduces model complexity.
+
 
 Concepts:
 - [Regression](https://www.youtube.com/watch?v=WWqE7YHR4Jc)
@@ -211,3 +214,4 @@ preds_validation = model.predict(X_validation)
 print('RMSLE on validation set',
     rmsle(np.expm1(np.asarray(y_validation)), np.expm1(np.abs(preds_validation)) ))
 ```
+Reference: Kaggle Competition
