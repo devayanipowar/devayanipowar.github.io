@@ -73,9 +73,9 @@ In order to understand the dataset and to identify any obvious patterns we use E
 
 [Refer for more information](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/eda.png" alt="Condition vs price">
+<img src="{{ site.url }}{{ site.baseurl }}/images/regres_reg/eda.png" alt="Condition vs price">
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/reg.png" alt="Distribution of price">
+<img src="{{ site.url }}{{ site.baseurl }}/images/regres_reg/reg.png" alt="Distribution of price">
 
 ### Data Preprocessing & cleaning
 
@@ -120,7 +120,7 @@ Concepts:
 
 [Logarithmic transformation](http://onlinestatbook.com/2/transformations/log.html) to smooth long tailed or skewed data to more of a normal distribution to be used in regression setting.
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/log.png" alt="log transformation">
+<img src="{{ site.url }}{{ site.baseurl }}/images/regres_reg/log.png" alt="log transformation">
 
 
 
@@ -188,10 +188,10 @@ X = scipy.sparse.hstack((X_dummies,
 ### Modeling:
 
 Concepts:
-- [Regression]()
-- [Regularization]()
-- [Ridge Regression]()
-- [Multi-collinearity]()
+- [Regression](https://www.youtube.com/watch?v=WWqE7YHR4Jc)
+- [Regularization](https://en.wikipedia.org/wiki/Regularization_(mathematics))
+- [Ridge Regression](https://en.wikipedia.org/wiki/Tikhonov_regularization)
+- [Multi-collinearity](http://www.stat.cmu.edu/~larry/=stat401/lecture-17.pdf)
 
 ```python
 
