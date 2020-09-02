@@ -5,12 +5,11 @@ tags: [Regression]
 toc: true
 Excerpt: "Regularization in Regression"
 toc_label: "Table of Contents"
-toc_icon: "cog"
 ---
 
 # Regression
 
-This is my first project when I started in Data back in 2018
+This was my first project when I started in Data back in 2018, I was able to learn many concepts on the way.
 
 ### Dataset:
 
