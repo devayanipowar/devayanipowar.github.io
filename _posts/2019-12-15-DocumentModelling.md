@@ -2,11 +2,16 @@
 title: "Document Classification using KNN "
 date: 2019-12-15
 tags:  [NLP]
+toc: true
+Excerpt: "K Nearest neighbour"
+toc_label: "Table of Contents"
 ---
 
-# KNN
+This was the first model that I built from scratch
 
-# *Text Preprocessing:*
+
+## Text Preprocessing:
+
 Lemmatization/Stemming helps to reduce the variations among the words so that necessary words can be processed
 
 Stop-words are removed so that only significant text features would be captured
@@ -50,6 +55,7 @@ def lemmatize(text):
     return lemmaTokenizer(filtered_sentence)
 ```
 
+
 Here, if documents have to be classified according to the genre or feature we have to consider a bag of words approach.
 KNN is implemented from scratch using cosine similarity as a distance measure to predict if the document is classified accurately enough.
 Standard approach is:
@@ -59,10 +65,15 @@ Standard approach is:
 -  Implement KNN to classify the documents accurately.
 -  Train the model and test the model.
 
+## Implementing a K-Nearest Neighbour Classifier
+
+- Fitting a model & Predicting using a fitted model
+[Refer this](https://www.youtube.com/watch?v=AoeEHqVSNOw)
 
 ```python
 # KNN Classifier
 class KNNClassifier():
+
     def fit(self, dtrain, ltrain):
         self.dtrain = dtrain
         self.ltrain = ltrain
@@ -136,9 +147,12 @@ vec_tfidf = TfidfVectorizer(tokenizer=Stemmer, sublinear_tf=True, min_df=0.005, 
 # 4 initialize KNNClassifier
 print("initializing classifier")
 classifier = KNNClassifier()
+
 classifier.fit(data_train, lable_train)
+
 print("prediction starting.....")
 result = classifier.predict(test_data, 11)
+
 print("writing result into file...")
 np.savetxt('final1output.txt', result, delimiter='; ')
 print("prediction completed....xxxxx")

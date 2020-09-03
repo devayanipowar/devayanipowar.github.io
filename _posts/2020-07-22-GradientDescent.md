@@ -2,6 +2,9 @@
 title: "Linear Regression: Gradient Descent"
 date: 2020-07-22
 tags: [Regression, Machine Learning]
+toc: true
+Excerpt: "Gradient Descent"
+toc_label: "Table of Contents"
 ---
 
 
@@ -10,7 +13,7 @@ tags: [Regression, Machine Learning]
 Linear Regression & Gradient Descent is the first algorithm I came across When I decided to get into Data Science through Andrew Ng's Machine Learning course and after that through my Master's Program
 Every other algorithm I implemented since is based on these basic algorithms and it fascinates me every time. Lets dive into it:
 
-### Linear Regression:
+## Linear Regression:
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -24,7 +27,7 @@ data.head()
 
 ```
 
-### Feature scaling for Multivariate Problem
+## Feature scaling for Multivariate Problem
 
 [Why is Feature Scaling Important](https://scikit-learn.org/stable/auto_examples/preprocessing/plot_scaling_importance.html)
 
@@ -48,6 +51,10 @@ theta=np.zeros((3,1))
 
 ### Closed-form formula or Normal Equation
 
+We dont need to implement feature scaling in this case.
+
+Formula:
+
 
 ```python
 XT=X.T
@@ -64,7 +71,7 @@ print(thetanew)
      [-8738.01911255]]
 
 
-### Cost Function
+**Finding Cost Function or Loss Function for gradient descent**
 
 
 ```python
@@ -73,10 +80,7 @@ def computeCost(X,y,theta):
     err=((np.dot(X, theta)) - y)**2
     jtheta = (np.sum(err) *( 1/ (2*m)))
     return jtheta
-```
 
-
-```python
 computeCost(X,y,theta)
 
 ```
@@ -100,10 +104,7 @@ def gradientDescent(X, y, theta, alpha, iterations):
         history.append(computeCost(X, y, theta))
 
     return theta, history
-```
 
-
-```python
 thetanew1,chistory1= gradientDescent(X,y,theta,1,50)
 print(thetanew1)
 ```
@@ -122,15 +123,13 @@ plt.title("loss function using Gradient Descent")
 ```
 
 
-
-
     Text(0.5, 1.0, 'loss function using Gradient Descent')
 
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/GradientDescent_12_1.png" alt="loss function using Gradient Descent">
 
 
-### Stochastic Gradient Descent/
+## Stochastic Gradient Descent
 
 ```python
 def stocashtic_gradient_descent(X, y, theta, alpha, iterations):
@@ -150,10 +149,7 @@ def stocashtic_gradient_descent(X, y, theta, alpha, iterations):
         cost_history[i] = cost
 
     return theta, cost_history
-```
 
-
-```python
 thetanew2,chistory2 = stocashtic_gradient_descent(X,y,theta,1,100)
 print(thetanew2)
 ```
@@ -262,6 +258,7 @@ plt.plot(predictions)
 plt.plot(y_test)
 
 ```
+Prediction vs ground truth
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/GradientDescent_25_1.png" alt="Prediction vs ground truth">
 
@@ -311,7 +308,7 @@ print(eval1)
      [ 94344.63835206]
      [ -1437.15342375]]
 
-
+## Gradient Descent with Regularization
 
 ```python
 m1=len(predictions)
